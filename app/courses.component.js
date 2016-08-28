@@ -20,11 +20,13 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         execute: function() {
             CourseComponent = (function () {
                 function CourseComponent() {
+                    this.title = "name of the page";
+                    this.courses = ["Math", "English", "Music"];
                 }
                 CourseComponent = __decorate([
                     core_1.Component({
                         selector: 'courses',
-                        template: '<h2>Courses</h2>'
+                        template: "\n        <h2>Courses</h2>\n        {{title}}\n        <ul>\n            <li *ngFor=\"#course of courses\">{{course}}</li>\n        </ul>\n    "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], CourseComponent);
