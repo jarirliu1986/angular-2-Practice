@@ -1,0 +1,1 @@
+Directive: a class that allows us to extend or control DOM
