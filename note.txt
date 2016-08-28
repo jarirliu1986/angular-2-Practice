@@ -1,2 +1,6 @@
 Directive: a class that allows us to extend or control DOM
 template: interpolate
+Services:
+	-import services from file 
+	-inject the services in the constructor
+	-add the provider of services in the main Component
