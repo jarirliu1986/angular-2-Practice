@@ -1,4 +1,4 @@
-import {Component} from 'angular2/core'
+import {Component, Input} from 'angular2/core'
 
 @Component({
     selector : 'star',
@@ -10,7 +10,7 @@ import {Component} from 'angular2/core'
     `
 })
 export class StarComponent{
-    isFav = false;
+    @Input() isFav = false;
     onClick(){
         this.isFav = !this.isFav;
     }

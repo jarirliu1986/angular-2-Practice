@@ -25,6 +25,10 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 StarComponent.prototype.onClick = function () {
                     this.isFav = !this.isFav;
                 };
+                __decorate([
+                    core_1.Input(), 
+                    __metadata('design:type', Object)
+                ], StarComponent.prototype, "isFav", void 0);
                 StarComponent = __decorate([
                     core_1.Component({
                         selector: 'star',

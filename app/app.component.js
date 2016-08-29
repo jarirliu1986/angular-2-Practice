@@ -29,11 +29,15 @@ System.register(['angular2/core', './courses.component', './author.component', '
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
+                    this.post = {
+                        isFav: true,
+                        title: "Title"
+                    };
                 }
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n        <star></star><h1>hello angular</h1>\n        <courses></courses>\n        <author></author>\n        <button class=\"btn btn-primary\">Submit</button>\n    ",
+                        template: "\n        <star [isFav] = \"post.isFav\"></star><h1>hello angular</h1>\n        <courses></courses>\n        <author></author>\n        <button class=\"btn btn-primary\">Submit</button>\n    ",
                         directives: [courses_component_1.CourseComponent, author_component_1.AuthorComponent, star_component_1.StarComponent]
                     }), 
                     __metadata('design:paramtypes', [])

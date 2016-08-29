@@ -6,11 +6,16 @@ import {StarComponent} from './star.component'
 @Component({
     selector: 'my-app',
     template: `
-        <star></star><h1>hello angular</h1>
+        <star [isFav] = "post.isFav"></star><h1>hello angular</h1>
         <courses></courses>
         <author></author>
         <button class="btn btn-primary">Submit</button>
     `,
     directives: [CourseComponent, AuthorComponent, StarComponent]
 })
-export class AppComponent { }
+export class AppComponent {
+    post = {
+        isFav : true,
+        title : "Title"
+    }
+}
