@@ -1,4 +1,4 @@
-System.register(['angular2/core', './courses.service'], function(exports_1, context_1) {
+System.register(['angular2/core', './courses.service', './auto-grow.directive', './highlight.directive'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './courses.service'], function(exports_1, cont
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, courses_service_1;
+    var core_1, courses_service_1, auto_grow_directive_1, highlight_directive_1;
     var CourseComponent;
     return {
         setters:[
@@ -19,6 +19,12 @@ System.register(['angular2/core', './courses.service'], function(exports_1, cont
             },
             function (courses_service_1_1) {
                 courses_service_1 = courses_service_1_1;
+            },
+            function (auto_grow_directive_1_1) {
+                auto_grow_directive_1 = auto_grow_directive_1_1;
+            },
+            function (highlight_directive_1_1) {
+                highlight_directive_1 = highlight_directive_1_1;
             }],
         execute: function() {
             CourseComponent = (function () {
@@ -29,8 +35,9 @@ System.register(['angular2/core', './courses.service'], function(exports_1, cont
                 CourseComponent = __decorate([
                     core_1.Component({
                         selector: 'courses',
-                        template: "\n        <h2>Courses</h2>\n        {{title}}\n        <ul>\n            <li *ngFor=\"#course of courses\">{{course}}</li>\n        </ul>\n    ",
-                        providers: [courses_service_1.CourseService]
+                        template: "\n        <h2 myHighlight>Courses</h2>\n        <input type=\"text\" autoGrow />\n        {{title}}\n        <ul>\n            <li *ngFor=\"#course of courses\">{{course}}</li>\n        </ul>\n    ",
+                        providers: [courses_service_1.CourseService],
+                        directives: [auto_grow_directive_1.AutoGrowDirective, highlight_directive_1.HighlightDirective]
                     }), 
                     __metadata('design:paramtypes', [courses_service_1.CourseService])
                 ], CourseComponent);
