@@ -11,42 +11,42 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var StarComponent;
+    var LikeComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            StarComponent = (function () {
-                function StarComponent() {
-                    this.isFav = false;
-                    this.change = new core_1.EventEmitter();
+            LikeComponent = (function () {
+                function LikeComponent() {
+                    this.iLike = false;
+                    this.totalLikes = 0;
                 }
-                StarComponent.prototype.onClick = function () {
-                    this.isFav = !this.isFav;
-                    this.change.emit({ newValue: this.isFav });
+                LikeComponent.prototype.onClick = function () {
+                    this.iLike = !this.iLike;
+                    this.totalLikes += this.iLike ? 1 : -1;
                 };
                 __decorate([
                     core_1.Input(), 
                     __metadata('design:type', Object)
-                ], StarComponent.prototype, "isFav", void 0);
+                ], LikeComponent.prototype, "iLike", void 0);
                 __decorate([
-                    core_1.Output(), 
+                    core_1.Input(), 
                     __metadata('design:type', Object)
-                ], StarComponent.prototype, "change", void 0);
-                StarComponent = __decorate([
+                ], LikeComponent.prototype, "totalLikes", void 0);
+                LikeComponent = __decorate([
                     core_1.Component({
-                        selector: 'star',
-                        //templateUrl : 'app/star.template.html'
-                        template: "\n        <i  class=\"glyphicon\"\n       [class.glyphicon-star-empty] = \"!isFav\"\n       [class.glyphicon-star] = \"isFav\"\n       (click) = \"onClick()\"></i>\n    "
+                        selector: 'like',
+                        template: "\n        <i \n            class = \"glyphicon glyphicon-heart\"\n            [class.highlighted] = \"iLike\"\n            (click)=\"onClick()\">\n        </i>\n        <span>{{totalLikes}}</span>\n    ",
+                        styles: ["\n        .glyphicon-heart{\n            color: #ccc;\n            cursor: pointer;\n        }\n        \n        .highlighted{\n            color: deeppink;\n        }\n    "]
                     }), 
                     __metadata('design:paramtypes', [])
-                ], StarComponent);
-                return StarComponent;
+                ], LikeComponent);
+                return LikeComponent;
             }());
-            exports_1("StarComponent", StarComponent);
+            exports_1("LikeComponent", LikeComponent);
         }
     }
 });
-//# sourceMappingURL=star.component.js.map
+//# sourceMappingURL=like.component.js.map
