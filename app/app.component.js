@@ -1,4 +1,4 @@
-System.register(['angular2/core', './courses.component', './author.component'], function(exports_1, context_1) {
+System.register(['angular2/core', './courses.component', './author.component', './star.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './courses.component', './author.component'], 
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, courses_component_1, author_component_1;
+    var core_1, courses_component_1, author_component_1, star_component_1;
     var AppComponent;
     return {
         setters:[
@@ -22,6 +22,9 @@ System.register(['angular2/core', './courses.component', './author.component'], 
             },
             function (author_component_1_1) {
                 author_component_1 = author_component_1_1;
+            },
+            function (star_component_1_1) {
+                star_component_1 = star_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -30,8 +33,8 @@ System.register(['angular2/core', './courses.component', './author.component'], 
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n        <h1>hello angular</h1>\n        <courses></courses>\n        <author></author>\n    ",
-                        directives: [courses_component_1.CourseComponent, author_component_1.AuthorComponent]
+                        template: "\n        <star></star><h1>hello angular</h1>\n        <courses></courses>\n        <author></author>\n        <button class=\"btn btn-primary\">Submit</button>\n    ",
+                        directives: [courses_component_1.CourseComponent, author_component_1.AuthorComponent, star_component_1.StarComponent]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);

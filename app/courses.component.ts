@@ -6,8 +6,9 @@ import {HighlightDirective} from './highlight.directive'
 @Component({
     selector:'courses',
     template:`
-        <h2 myHighlight>Courses</h2>
-        <input type="text" autoGrow />
+        <!--<h2 myHighlight>Courses</h2>-->
+        <h2>Courses</h2>
+        <!--<input type="text" autoGrow />-->
         {{title}}
         <ul>
             <li *ngFor="#course of courses">{{course}}</li>
