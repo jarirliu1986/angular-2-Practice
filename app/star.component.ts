@@ -2,12 +2,7 @@ import {Component, Input, Output, EventEmitter} from 'angular2/core'
 
 @Component({
     selector : 'star',
-    template :　`
-        <span  class="glyphicon"
-            [class.glyphicon-star-empty] = "!isFav"
-            [class.glyphicon-star] = "isFav"
-            (click) = "onClick()"></span>
-    `
+    templateUrl : 'app/star.template.html'
 })
 export class StarComponent{
     @Input() isFav = false;
