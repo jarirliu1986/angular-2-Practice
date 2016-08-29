@@ -6,7 +6,7 @@ import {StarComponent} from './star.component'
 @Component({
     selector: 'my-app',
     template: `
-        <star [isFav] = "post.isFav"></star><h1>hello angular</h1>
+        <star [isFav] = "post.isFav" (change)="onFavChange($event)"></star><h1>hello angular</h1>
         <courses></courses>
         <author></author>
         <button class="btn btn-primary">Submit</button>
@@ -17,5 +17,9 @@ export class AppComponent {
     post = {
         isFav : true,
         title : "Title"
+    }
+
+    onFavChange ($event){
+        console.log($event);
     }
 }

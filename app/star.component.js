@@ -21,14 +21,20 @@ System.register(['angular2/core'], function(exports_1, context_1) {
             StarComponent = (function () {
                 function StarComponent() {
                     this.isFav = false;
+                    this.change = new core_1.EventEmitter();
                 }
                 StarComponent.prototype.onClick = function () {
                     this.isFav = !this.isFav;
+                    this.change.emit({ newValue: this.isFav });
                 };
                 __decorate([
                     core_1.Input(), 
                     __metadata('design:type', Object)
                 ], StarComponent.prototype, "isFav", void 0);
+                __decorate([
+                    core_1.Output(), 
+                    __metadata('design:type', Object)
+                ], StarComponent.prototype, "change", void 0);
                 StarComponent = __decorate([
                     core_1.Component({
                         selector: 'star',

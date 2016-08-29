@@ -1,4 +1,4 @@
-import {Component, Input} from 'angular2/core'
+import {Component, Input, Output, EventEmitter} from 'angular2/core'
 
 @Component({
     selector : 'star',
@@ -11,7 +11,9 @@ import {Component, Input} from 'angular2/core'
 })
 export class StarComponent{
     @Input() isFav = false;
+    @Output() change = new EventEmitter();
     onClick(){
         this.isFav = !this.isFav;
+        this.change.emit({newValue : this.isFav});
     }
 }
