@@ -1,4 +1,4 @@
-System.register(['angular2/core', './courses.component', './author.component', './star.component', './like.component'], function(exports_1, context_1) {
+System.register(['angular2/core', './voter.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,45 +10,41 @@ System.register(['angular2/core', './courses.component', './author.component', '
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, courses_component_1, author_component_1, star_component_1, like_component_1;
+    var core_1, voter_component_1;
     var AppComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (courses_component_1_1) {
-                courses_component_1 = courses_component_1_1;
-            },
-            function (author_component_1_1) {
-                author_component_1 = author_component_1_1;
-            },
-            function (star_component_1_1) {
-                star_component_1 = star_component_1_1;
-            },
-            function (like_component_1_1) {
-                like_component_1 = like_component_1_1;
+            function (voter_component_1_1) {
+                voter_component_1 = voter_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
                     this.post = {
                         isFav: true,
-                        title: "Title"
+                        title: "Title",
+                        myVote: 0,
+                        voteCount: 10
                     };
                     this.tweet = {
                         like: false,
                         total: 10
                     };
                 }
+                AppComponent.prototype.onVote = function ($event) {
+                    console.log($event);
+                };
                 AppComponent.prototype.onFavChange = function ($event) {
                     console.log($event);
                 };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n        <like [iLike]=\"tweet.like\" [totalLikes]=\"tweet.total\" ></like>\n        <star [isFav] = \"post.isFav\" (change)=\"onFavChange($event)\"></star><h1>hello angular</h1>\n        <courses></courses>\n        <author></author>\n        <button class=\"btn btn-primary\">Submit</button>\n    ",
-                        directives: [courses_component_1.CourseComponent, author_component_1.AuthorComponent, star_component_1.StarComponent, like_component_1.LikeComponent]
+                        template: "\n        <voter [myVote]=\"post.myVote\" [voteCount]=\"post.voteCount\" (vote)=\"onVote($event)\"></voter>\n     <!--   \n        <like [iLike]=\"tweet.like\" [totalLikes]=\"tweet.total\" ></like>\n        <star [isFav] = \"post.isFav\" (change)=\"onFavChange($event)\"></star><h1>hello angular</h1>\n        <courses></courses>\n        <author></author>\n        <button class=\"btn btn-primary\">Submit</button>\n        -->\n    ",
+                        directives: [voter_component_1.VoterComponent]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
