@@ -4,3 +4,10 @@ Services:
 	-import services from file 
 	-inject the services in the constructor
 	-add the provider of services in the main Component
+
+build-in directives
+	*ngIf
+	[ngSwitch]="variable" --> <template [ngSwitchWhen] ngSwitchDefault></template>
+	*ngFor <li *ngFor = "#value of values, #i=index"> //#indicate a local variable
+		{{ i + 1 }} -- {{ value }} <i>
+		*indicate there is follow a <template>
