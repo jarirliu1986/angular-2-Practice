@@ -32,7 +32,7 @@ System.register(['angular2/core', './tweet.component', './tweet.service', './zip
                     this.zippyData = {
                         stuff1: {
                             info: "basic info",
-                            name: "shirley",
+                            name: "john",
                             age: 28
                         },
                         stuff2: {

@@ -40,7 +40,7 @@ export class AppComponent {
     zippyData = {
          stuff1 :{
              info : "basic info",
-             name : "shirley",
+             name : "john",
              age : 28
          },
         stuff2 :{
